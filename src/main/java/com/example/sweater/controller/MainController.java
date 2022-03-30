@@ -32,7 +32,7 @@ public class MainController {
     }
     @GetMapping("/main")
     public String main(@RequestParam(required = false, defaultValue = "") String tag, Model model) {
-        Iterable<Message> messages = messageRepo.findAll();
+        Iterable<Message> messages;
         if (tag == null || tag.isEmpty()) {
             messages = messageRepo.findAll();
         } else {
