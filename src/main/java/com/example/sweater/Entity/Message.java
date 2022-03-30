@@ -1,5 +1,7 @@
 package com.example.sweater.Entity;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,7 +9,6 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String text;
     private String tag;
 
@@ -15,7 +16,7 @@ public class Message {
     @JoinColumn(name = "user_id")
     private User author;
 
-
+    private String filename;
 
     public Message() {
     }
@@ -23,6 +24,14 @@ public class Message {
         this.text = text;
         this.tag = tag;
         this.author = user;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public String getAuthorName() {
