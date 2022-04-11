@@ -17,6 +17,10 @@ public class User implements UserDetails {
     private String password;
     private boolean active;
 
+    private String email;
+    private String activationCode;
+
+
 
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
@@ -26,6 +30,22 @@ public class User implements UserDetails {
 
     public boolean isAdmin() {
         return roles.contains(Role.ADMIN);
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getActivationCode() {
+        return activationCode;
+    }
+
+    public void setActivationCode(String activasionCode) {
+        this.activationCode = activasionCode;
     }
 
     public Long getId() {
