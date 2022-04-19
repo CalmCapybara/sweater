@@ -74,12 +74,12 @@
             <version>2.6.5</version>
         </dependency>
 
-        <!-- flyway для миграции -->
-<!--        <dependency>-->
-<!--            <groupId>org.flywaydb</groupId>-->
-<!--            <artifactId>flyway-core</artifactId>-->
-<!--            <version>8.5.5</version>-->
-<!--        </dependency>-->
+<!--         flyway для миграции -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>8.5.5</version>
+        </dependency>
 
 
 
