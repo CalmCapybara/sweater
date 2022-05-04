@@ -1,15 +1,21 @@
 package com.example.sweater.Entity;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotBlank(message = "Введите сообщение")
+    @Length(max = 2048, message = "Слишком много буковок и циферок")
     private String text;
+    @NotBlank(message = "Введите таг")
+    @Length(max = 255, message = "слишком много буковок и циферок")
     private String tag;
 
     @ManyToOne(fetch = FetchType.EAGER)

@@ -81,6 +81,19 @@
             <version>8.5.5</version>
         </dependency>
 
+<!--        для валидации данных-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+<!--        для remeberme()-->
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-jdbc</artifactId>
+            <version>2.6.3</version>
+        </dependency>
+
 
 
 

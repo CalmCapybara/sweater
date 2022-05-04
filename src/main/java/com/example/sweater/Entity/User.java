@@ -1,9 +1,12 @@
 package com.example.sweater.Entity;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 import java.util.Set;
 
@@ -13,14 +16,15 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
+    @NotBlank(message = "обязательное поле")
     private String username;
+    @NotBlank(message = "обязательное поле")
     private String password;
     private boolean active;
-
+    @NotBlank(message = "обязательное поле")
+    @Email
     private String email;
     private String activationCode;
-
-
 
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
