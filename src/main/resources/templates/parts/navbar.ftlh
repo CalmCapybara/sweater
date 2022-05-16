@@ -32,7 +32,6 @@
             <@l.logoutButton />
         <#else>
             <@l.loginButton />
-            <@l.SingUpButton />
         </#if>
     </div>
 </nav>

@@ -82,16 +82,19 @@
 </#macro>
 
 <#macro loginButton>
-    <form action="/logout" method="post">
-        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-        <button class="btn btn-primary" type="submit">Sing In</button>
-    </form>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+            <button class="btn btn-primary me-md-2" type="submit">Sing In</button>
+        </form>
+
+        <form action="/registration" method="get">
+            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+            <button class="btn btn-light" type="submit">Sing Up</button>
+        </form>
+    </div>
 </#macro>
 
-<#macro SingUpButton>
-    <form action="/registration" method="get">
-        <button class="btn btn-primary" type="submit">Sing Up</button>
-    </form>
-</#macro>
+
 
 
